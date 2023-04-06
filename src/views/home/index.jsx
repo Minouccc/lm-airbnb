@@ -1,8 +1,11 @@
-import React, { memo } from 'react'
+import React, { memo, } from 'react'
 
 const Home = memo(() => {
+  
   return (
-    <div>Home</div>
+    <div>
+      Home
+    </div>
   )
 })
 
