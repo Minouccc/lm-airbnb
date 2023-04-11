@@ -1,11 +1,13 @@
 import React, { memo } from 'react'
+import { HomeWrapper } from './style'
+import HomeBannner from './c-cpns/home-banner'
 
 const Home = memo(() => {
   
   return (
-    <div>
-      Home
-    </div>
+    <HomeWrapper>
+      <HomeBannner />
+    </HomeWrapper>
   )
 })
 
