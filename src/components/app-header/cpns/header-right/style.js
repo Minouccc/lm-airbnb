@@ -11,8 +11,9 @@ export const RightWrapper = styled.div`
 
   .btns {
     display: flex;
-    align-items: center;
+    box-sizing: content-box;
     .btn {
+      box-sizing: content-box;
       height: 18px;
       line-height: 18px;
       padding: 12px 15px;
@@ -22,6 +23,10 @@ export const RightWrapper = styled.div`
       &:hover {
         background-color: #f5f5f5;
       }
+    }
+    .btn:nth-child(3) {
+      position: relative;
+      top: 1px;
     }
   }
 
