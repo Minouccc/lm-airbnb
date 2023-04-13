@@ -8,10 +8,11 @@ import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
 
 const Home = memo(() => {
-  const {goodPriceInfo,highScoreInfo,discountInfo} = useSelector((state) => ({
+  const {goodPriceInfo,highScoreInfo,discountInfo,recommendInfo} = useSelector((state) => ({
     goodPriceInfo: state.home.goodPriceInfo,
     highScoreInfo: state.home.highScoreInfo,
-    discountInfo: state.home.discountInfo
+    discountInfo: state.home.discountInfo,
+    recommendInfo: state.home.recommendInfo
   }),shallowEqual)
   
   const dispatch = useDispatch()
@@ -25,6 +26,7 @@ const Home = memo(() => {
       <HomeBannner />
       <div className="content">
         {Object.keys(discountInfo).length && <HomeSectionV2 infoData={discountInfo}/>}
+        {Object.keys(recommendInfo).length && <HomeSectionV2 infoData={recommendInfo}/>}
         {Object.keys(goodPriceInfo).length && <HomeSectionV1 infoData={goodPriceInfo}/>}
         {Object.keys(highScoreInfo).length && <HomeSectionV1 infoData={highScoreInfo}/>}
       </div>
