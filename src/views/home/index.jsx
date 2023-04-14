@@ -7,14 +7,16 @@ import { fetchHomeDataAction } from '@/store/modules/home'
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
 import HomeLongfor from './c-cpns/home-longfor'
+import HomeSectionV3 from './c-cpns/home-section-v3'
 
 const Home = memo(() => {
-  const {goodPriceInfo,highScoreInfo,discountInfo,recommendInfo,longForInfo} = useSelector((state) => ({
+  const {goodPriceInfo,highScoreInfo,discountInfo,recommendInfo,longForInfo,homePlusInfo} = useSelector((state) => ({
     goodPriceInfo: state.home.goodPriceInfo,
     highScoreInfo: state.home.highScoreInfo,
     discountInfo: state.home.discountInfo,
     recommendInfo: state.home.recommendInfo,
-    longForInfo: state.home.longForInfo
+    longForInfo: state.home.longForInfo,
+    homePlusInfo:state.home.homePlusInfo
   }),shallowEqual)
   
   const dispatch = useDispatch()
@@ -32,6 +34,7 @@ const Home = memo(() => {
         {Object.keys(longForInfo).length && <HomeLongfor infoData={longForInfo}/>}
         {Object.keys(goodPriceInfo).length && <HomeSectionV1 infoData={goodPriceInfo}/>}
         {Object.keys(highScoreInfo).length && <HomeSectionV1 infoData={highScoreInfo}/>}
+        {Object.keys(homePlusInfo).length && <HomeSectionV3 infoData={homePlusInfo}/>}
       </div>
     </HomeWrapper>
   )
