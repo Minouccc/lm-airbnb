@@ -6,13 +6,15 @@ import HomeBannner from './c-cpns/home-banner'
 import { fetchHomeDataAction } from '@/store/modules/home'
 import HomeSectionV1 from './c-cpns/home-section-v1'
 import HomeSectionV2 from './c-cpns/home-section-v2'
+import HomeLongfor from './c-cpns/home-longfor'
 
 const Home = memo(() => {
-  const {goodPriceInfo,highScoreInfo,discountInfo,recommendInfo} = useSelector((state) => ({
+  const {goodPriceInfo,highScoreInfo,discountInfo,recommendInfo,longForInfo} = useSelector((state) => ({
     goodPriceInfo: state.home.goodPriceInfo,
     highScoreInfo: state.home.highScoreInfo,
     discountInfo: state.home.discountInfo,
-    recommendInfo: state.home.recommendInfo
+    recommendInfo: state.home.recommendInfo,
+    longForInfo: state.home.longForInfo
   }),shallowEqual)
   
   const dispatch = useDispatch()
@@ -27,6 +29,7 @@ const Home = memo(() => {
       <div className="content">
         {Object.keys(discountInfo).length && <HomeSectionV2 infoData={discountInfo}/>}
         {Object.keys(recommendInfo).length && <HomeSectionV2 infoData={recommendInfo}/>}
+        {Object.keys(longForInfo).length && <HomeLongfor infoData={longForInfo}/>}
         {Object.keys(goodPriceInfo).length && <HomeSectionV1 infoData={goodPriceInfo}/>}
         {Object.keys(highScoreInfo).length && <HomeSectionV1 infoData={highScoreInfo}/>}
       </div>
