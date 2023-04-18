@@ -4,6 +4,7 @@ import EntireFilter from './c-cpns/entire-filter'
 import { useDispatch } from 'react-redux'
 import { fetchRoomListAction } from '@/store/modules/entire/actionCreators'
 import EntireRoom from './c-cpns/entire-rooms'
+import EntirePagination from './c-cpns/entire-pagination'
 
 const Entire = memo(() => {
   const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const Entire = memo(() => {
     <EntireWrapper>
       <EntireFilter />
       <EntireRoom />
-      <div className="pagination">pagination-section</div>
+      <EntirePagination />
     </EntireWrapper>
   )
 })
