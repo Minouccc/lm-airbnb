@@ -4,7 +4,7 @@ export const PaginationWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-top: 30px;
   .info {
     display: flex;
     flex-direction: column;
