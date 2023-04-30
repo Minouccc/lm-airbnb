@@ -1,6 +1,6 @@
-import React, { memo } from 'react'
-import { CenterWrapper } from './style'
-import IconSearchBar from '@/assets/svg/icon-search-bar'
+import React, { memo } from "react";
+import { CenterWrapper } from "./style";
+import { IconSearchBar } from "@/assets/svg";
 const HeaderCenter = memo(() => {
   return (
     <CenterWrapper>
@@ -11,7 +11,7 @@ const HeaderCenter = memo(() => {
         </span>
       </div>
     </CenterWrapper>
-  )
-})
+  );
+});
 
-export default HeaderCenter
+export default HeaderCenter;
